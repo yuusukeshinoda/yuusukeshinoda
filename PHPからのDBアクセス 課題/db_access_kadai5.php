@@ -9,10 +9,13 @@ try{
 }
 
 //profilesテーブルからnameに'茂'が含まれるレコードを取得するSQL文を変数に格納
-$sql = "SELECT * FROM profiles WHERE name LIKE '%茂%'";
+$sql = "SELECT * FROM profiles WHERE name LIKE :name";
 
 //SQLを実行する変数を用意
 $query = $pdo -> prepare($sql);
+
+//検索する名前の一部を%で囲んでバインド
+$query -> bindValue(':name','%'.'茂'.'%');
 
 //SQLを実行
 $query -> execute();
