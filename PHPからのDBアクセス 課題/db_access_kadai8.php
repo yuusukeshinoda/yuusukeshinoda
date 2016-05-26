@@ -14,7 +14,6 @@ if(empty($_POST['name']) || $_POST['mode']=='back'){ ?>
 </html>
 
 <?php
-var_dump($_POST);
 }else{
 	try{
 		$pdo = new PDO('mysql:host=localhost;dbname=Challenge_db;charset=utf8','yussuke','mofcarro');
@@ -69,7 +68,6 @@ var_dump($_POST);
         <input type=hidden name="mode" value="back">
         </form>
         <?php
-        var_dump($_POST);
     }
    }
    ?>
